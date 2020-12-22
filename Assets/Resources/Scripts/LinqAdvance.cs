@@ -6,6 +6,7 @@ using UnityEngine;
 public static class LinqAdvance
 {
    
+    
     //It will Return random element;
     public static T GetRandomElement<T>(this T[] element)
     {
@@ -20,7 +21,10 @@ public static class LinqAdvance
     {
         return string.Join(",", element.ToArray());
     }
-
+    public static void CallAfter(this TimeManager.MyDelegate myDelegate,float timer)
+    {
+        TimeManager.Instance.AddDelegate(myDelegate, timer);
+    }
    
     public static List<T> arrayToList<T>(this T[] element)
     {
